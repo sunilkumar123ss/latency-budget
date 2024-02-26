@@ -1,0 +1,45 @@
+{
+  "budget_ms": 800,
+  "stages": [
+    {
+      "name": "endpointing",
+      "duration_ms": 120
+    },
+    {
+      "name": "asr",
+      "duration_ms": 180,
+      "depends_on": [
+        "endpointing"
+      ]
+    },
+    {
+      "name": "retrieval",
+      "duration_ms": 90,
+      "depends_on": [
+        "asr"
+      ]
+    },
+    {
+      "name": "policy",
+      "duration_ms": 30,
+      "depends_on": [
+        "asr"
+      ]
+    },
+    {
+      "name": "generation",
+      "duration_ms": 250,
+      "depends_on": [
+        "retrieval",
+        "policy"
+      ]
+    },
+    {
+      "name": "tts_first_chunk",
+      "duration_ms": 100,
+      "depends_on": [
+        "generation"
+      ]
+    }
+  ]
+}
