@@ -4,7 +4,7 @@ This reference implementation and all of the following milestone commits were pr
 
 **Every recorded author and committer date in this timeline is synthetic. These dates are not evidence that the code was written, tested, deployed, or used professionally in the past.**
 
-This snapshot is milestone 3 of 14. It is an incomplete tutorial stage; source, fixtures, tests, the CLI, and automation are introduced progressively.
+This snapshot is milestone 4 of 14. It is an incomplete tutorial stage; source, fixtures, tests, the CLI, and automation are introduced progressively.
 
 The progression decomposes already-completed October 2026 code into meaningful additions. It is not recovered original development history. Publication time is separate from the synthetic Git timestamps.
 
@@ -15,7 +15,7 @@ The progression decomposes already-completed October 2026 code into meaningful a
 | 1 | 2023-01-03T16:59:57+05:30 | Establish module imports, constants and repository hygiene (present) |
 | 2 | 2023-03-05T09:08:43+05:30 | Compute dependency-aware voice pipeline critical paths (present) |
 | 3 | 2024-02-26T16:56:19+05:30 | Add synthetic fixtures for the documented example (present) |
-| 4 | 2024-02-26T18:33:23+05:30 | Expose the command-line interface and default demonstration (later stage) |
+| 4 | 2024-02-26T18:33:23+05:30 | Expose the command-line interface and default demonstration (present) |
 | 5 | 2024-06-18T19:42:43+05:30 | Cover parallel join not sum and establish the test harness (later stage) |
 | 6 | 2024-10-10T16:29:43+05:30 | Cover unsorted and over budget (later stage) |
 | 7 | 2025-04-09T12:19:22+05:30 | Cover cycle (later stage) |

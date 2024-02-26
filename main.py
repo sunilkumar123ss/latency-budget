@@ -38,3 +38,17 @@ def analyze(stages, budget_ms):
     critical = max(done.values(), key=lambda x: (x['finish_ms'], x['path']), default={'finish_ms': 0, 'path': []})
     total = critical['finish_ms']
     return {'critical_path': critical['path'], 'estimated_latency_ms': total, 'budget_ms': budget_ms, 'remaining_ms': budget_ms - total, 'within_budget': total <= budget_ms, 'schedule': done}
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--input', type=Path, help='JSON {stages:[{name,duration_ms,depends_on}], budget_ms}')
+    args = parser.parse_args()
+    try:
+        p = json.loads(args.input.read_text()) if args.input else {'budget_ms': 800, 'stages': [{'name': 'endpointing', 'duration_ms': 120}, {'name': 'asr', 'duration_ms': 180, 'depends_on': ['endpointing']}, {'name': 'retrieval', 'duration_ms': 90, 'depends_on': ['asr']}, {'name': 'policy', 'duration_ms': 30, 'depends_on': ['asr']}, {'name': 'generation', 'duration_ms': 250, 'depends_on': ['retrieval', 'policy']}, {'name': 'tts_first_chunk', 'duration_ms': 100, 'depends_on': ['generation']}]}
+        if not isinstance(p, dict):
+            raise ValueError('Input must be an object')
+        print(json.dumps({'source': 'synthetic planning durations, not measured performance' if not args.input else 'user-supplied stage durations', **analyze(p['stages'], p['budget_ms'])}, indent=2))
+    except (ValueError, KeyError, TypeError, OSError, RecursionError) as exc:
+        parser.error(str(exc))
+if __name__ == '__main__':
+    main()
