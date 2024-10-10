@@ -12,3 +12,7 @@ class BudgetTests(unittest.TestCase):
         self.assertEqual(r['estimated_latency_ms'], 35)
         self.assertEqual(r['critical_path'], ['b', 'join'])
         self.assertTrue(r['within_budget'])
+
+    def test_unsorted_and_over_budget(self):
+        r = analyze([{'name': 'b', 'duration_ms': 3, 'depends_on': ['a']}, {'name': 'a', 'duration_ms': 2}], 4)
+        self.assertEqual(r['remaining_ms'], -1)
