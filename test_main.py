@@ -20,3 +20,10 @@ class BudgetTests(unittest.TestCase):
     def test_cycle(self):
         with self.assertRaises(ValueError):
             analyze([{'name': 'a', 'duration_ms': 1, 'depends_on': ['a']}], 10)
+
+    def test_invalid(self):
+        for stages in [[{'name': 'a', 'duration_ms': -1}], [{'name': 'a', 'duration_ms': 1, 'depends_on': ['missing']}], [{'name': 'a', 'duration_ms': 1}] * 2]:
+            with self.assertRaises(ValueError):
+                analyze(stages, 1)
+        with self.assertRaises(ValueError):
+            analyze([], float('nan'))

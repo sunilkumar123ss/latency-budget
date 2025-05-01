@@ -4,7 +4,7 @@ This reference implementation and all of the following milestone commits were pr
 
 **Every recorded author and committer date in this timeline is synthetic. These dates are not evidence that the code was written, tested, deployed, or used professionally in the past.**
 
-This snapshot is milestone 7 of 14. It is an incomplete tutorial stage; source, fixtures, tests, the CLI, and automation are introduced progressively.
+This snapshot is milestone 8 of 14. It is an incomplete tutorial stage; source, fixtures, tests, the CLI, and automation are introduced progressively.
 
 The progression decomposes already-completed October 2026 code into meaningful additions. It is not recovered original development history. Publication time is separate from the synthetic Git timestamps.
 
@@ -19,7 +19,7 @@ The progression decomposes already-completed October 2026 code into meaningful a
 | 5 | 2024-06-18T19:42:43+05:30 | Cover parallel join not sum and establish the test harness (present) |
 | 6 | 2024-10-10T16:29:43+05:30 | Cover unsorted and over budget (present) |
 | 7 | 2025-04-09T12:19:22+05:30 | Cover cycle (present) |
-| 8 | 2025-05-01T19:45:58+05:30 | Cover invalid (later stage) |
+| 8 | 2025-05-01T19:45:58+05:30 | Cover invalid (present) |
 | 9 | 2025-06-13T09:37:03+05:30 | Cover long chain without recursion (later stage) |
 | 10 | 2025-08-31T12:33:54+05:30 | Cover empty (later stage) |
 | 11 | 2025-10-30T12:33:05+05:30 | Describe package metadata and default verification arguments (later stage) |
