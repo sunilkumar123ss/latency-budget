@@ -27,3 +27,7 @@ class BudgetTests(unittest.TestCase):
                 analyze(stages, 1)
         with self.assertRaises(ValueError):
             analyze([], float('nan'))
+
+    def test_long_chain_without_recursion(self):
+        stages = [{'name': str(i), 'duration_ms': 1, 'depends_on': [str(i - 1)] if i else []} for i in range(500)]
+        self.assertEqual(analyze(stages, 500)['estimated_latency_ms'], 500)
