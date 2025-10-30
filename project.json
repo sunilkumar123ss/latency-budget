@@ -1,0 +1,8 @@
+{
+  "slug": "latency-budget",
+  "title": "Voice Pipeline Critical-Path Planner",
+  "description": "Build an earliest-start schedule and critical path for a dependency graph of voice pipeline stages.",
+  "category": "voice",
+  "demo_args": [],
+  "expected_exit": 0
+}
